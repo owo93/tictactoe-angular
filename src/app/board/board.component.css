@@ -1,13 +1,15 @@
 main {
   display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-gap: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(calc(100% / 3), 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0;
   justify-content: center;
   align-items: center;
 }
 
 app-square {
+  position: relative;
   border: 1px gray solid;
-  height: 200px;
-  width: 200px;
+  width: 30vw;
+  height: 30vh;
 }

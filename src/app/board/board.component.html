@@ -4,14 +4,6 @@
 
 <nb-layout-column>
   <h2 *ngIf="winner">Player {{ winner }} won the game!</h2>
-  <button
-    nbButton
-    outline
-    status="danger"
-    (click)="newGame()"
-  >
-    Reset
-  </button>
   <main>
     <app-square
       *ngFor="let val of squares; let i = index"
@@ -20,4 +12,12 @@
     >
     </app-square>
   </main>
+  <button
+    nbButton
+    outline
+    status="danger"
+    (click)="newGame()"
+  >
+    Reset
+  </button>
 </nb-layout-column>

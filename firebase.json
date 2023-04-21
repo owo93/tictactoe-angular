@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist\\tictactoe-remake",
+    "public": "dist/tictactoe-remake",
     "ignore": [
       "firebase.json",
       "**/.*",
