@@ -1,0 +1,23 @@
+<nb-layout-header fixed>
+  <h1>Current Player: {{ player }}</h1>
+</nb-layout-header>
+
+<nb-layout-column>
+  <h2 *ngIf="winner">Player {{ winner }} won the game!</h2>
+  <button
+    nbButton
+    outline
+    status="danger"
+    (click)="newGame()"
+  >
+    Reset
+  </button>
+  <main>
+    <app-square
+      *ngFor="let val of squares; let i = index"
+      [value]="val"
+      (click)="makeMove(i)"
+    >
+    </app-square>
+  </main>
+</nb-layout-column>
