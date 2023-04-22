@@ -1,6 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { SquareComponent } from '../square/square.component';
 
 @Component({
   selector: 'app-board',
@@ -11,12 +9,16 @@ import { SquareComponent } from '../square/square.component';
 export class BoardComponent implements OnInit {
   squares: any[];
   xIsNext: boolean;
-  winner: any;
+  winner: string | null;
+  xScore: number;
+  oScore: number;
 
   constructor() {}
 
   ngOnInit(): void {
     this.newGame();
+    this.xScore = 0;
+    this.oScore = 0;
   }
 
   newGame() {
@@ -36,6 +38,55 @@ export class BoardComponent implements OnInit {
     }
 
     this.winner = this.calculateWinner();
+
+    if (this.winner) {
+      setTimeout(() => {
+        alert('Player ' + this.winner + ' won!');
+        if (this.winner === 'X') {
+          this.xScore++;
+        } else {
+          this.oScore++;
+        }
+        if (this.xScore >= 3) {
+          alert('X won the game!');
+          this.xScore = 0;
+          this.oScore = 0;
+        } else if (this.oScore >= 3) {
+          alert('O won the game!');
+          this.xScore = 0;
+          this.oScore = 0;
+        } else {
+          this.newGame();
+        }
+      }, 250);
+      return;
+    }
+
+    if (this.isBoardFull()) {
+      setTimeout(() => {
+        alert('Draw!');
+        // this.xScore++; // 1 score each
+        // this.oScore++;
+        this.newGame();
+      }, 250);
+    }
+
+    if (this.winner) {
+      setTimeout(() => {
+        alert('Player ' + this.winner + ' won!, New Game?');
+        this.newGame();
+      }, 250);
+      return;
+    }
+  }
+
+  isBoardFull(): boolean {
+    for (let i = 0; i < this.squares.length; i++) {
+      if (this.squares[i] == null) {
+        return false;
+      }
+    }
+    return true;
   }
 
   calculateWinner() {

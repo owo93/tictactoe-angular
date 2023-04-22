@@ -11,5 +11,16 @@ app-square {
   position: relative;
   border: 1px gray solid;
   width: 30vw;
-  height: 30vh;
+  height: 30vw;
+}
+
+.score {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.reset-button {
+  margin-top: 20px;
 }

@@ -1,9 +1,12 @@
 <nb-layout-header fixed>
-  <h1>Current Player: {{ player }}</h1>
+  <span>Current Player: {{ player }}</span>
+  <div class="score">
+    <div>X Score: {{ xScore }}</div>
+    <div>O Score: {{ oScore }}</div>
+  </div>
 </nb-layout-header>
 
 <nb-layout-column>
-  <h2 *ngIf="winner">Player {{ winner }} won the game!</h2>
   <main>
     <app-square
       *ngFor="let val of squares; let i = index"
@@ -13,6 +16,7 @@
     </app-square>
   </main>
   <button
+    class="reset-button"
     nbButton
     outline
     status="danger"
