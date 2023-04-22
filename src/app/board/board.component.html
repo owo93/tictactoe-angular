@@ -11,8 +11,7 @@
     <app-square
       *ngFor="let val of squares; let i = index"
       [value]="val"
-      (click)="makeMove(i)"
-    >
+      (click)="makeMove(i)">
     </app-square>
   </main>
   <button
@@ -20,8 +19,7 @@
     nbButton
     outline
     status="danger"
-    (click)="resetGame()"
-  >
+    (click)="resetGame()">
     Reset
   </button>
 </nb-layout-column>
