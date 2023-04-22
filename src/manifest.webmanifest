@@ -1,7 +1,7 @@
 {
   "name": "tictactoe-remake",
   "short_name": "tictactoe-remake",
-  "theme_color": "#1976d2",
+  "theme_color": "#fc5986",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
