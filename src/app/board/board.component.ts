@@ -89,6 +89,12 @@ export class BoardComponent implements OnInit {
     return true;
   }
 
+  resetGame() {
+    this.newGame();
+    this.xScore = 0;
+    this.oScore = 0;
+  }
+
   calculateWinner() {
     const lines = [
       [0, 1, 2],
