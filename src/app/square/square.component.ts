@@ -6,24 +6,21 @@ import { Component, Input } from '@angular/core';
     <button
       nbButton
       status="basic"
-      *ngIf="!value"
-    >
+      *ngIf="!value">
       {{ value }}
     </button>
     <button
       nbButton
       hero
       status="success"
-      *ngIf="value == 'X'"
-    >
+      *ngIf="value == 'X'">
       {{ value }}
     </button>
     <button
       nbButton
       hero
       status="danger"
-      *ngIf="value == 'O'"
-    >
+      *ngIf="value == 'O'">
       {{ value }}
     </button>
   `,
