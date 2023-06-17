@@ -5,5 +5,5 @@
   "bracketSameLine": true,
   "singleAttributePerLine": true,
   "endOfLine": "auto",
-  "printWidth": 480
+  "printWidth": 120
 }
